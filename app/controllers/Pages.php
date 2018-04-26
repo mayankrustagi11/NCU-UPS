@@ -1,4 +1,5 @@
 <?php
+
   class Pages extends Controller {
     public function __construct() {
     }
@@ -9,7 +10,13 @@
       if(isLoggedIn()) {
         redirect('posts');
       }
-*/
+      */
       $this->view('pages/index');
     }
+
+    public function about() {
+
+      $this->view('pages/about');
+    }
+
   }

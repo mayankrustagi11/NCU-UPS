@@ -43,15 +43,11 @@ h4 {
 }
 
 p {
-    margin: 0 0 25px;
+    margin: 0 0 15px;
 }
 
 p.lead {
     font-weight: normal;
-}
-
-a:link, a:visited {
-    color: #dd5638;
 }
 
 a:hover {
@@ -97,7 +93,7 @@ input {
 }
 
 section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .section h2 {
@@ -161,6 +157,10 @@ blockquote:before {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+}
+
+#about .card p.card-text {
+    text-align: justify;
 }
 
 footer {

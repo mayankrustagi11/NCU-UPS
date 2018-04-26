@@ -25,7 +25,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 col-md-12">
-        <a class="btn btn-success btn-lg btn-block" >Click to know more</a>
+        <a href="<?php echo URLROOT; ?>pages/about" class="btn btn-success btn-lg btn-block" >Click to know more</a>
       </div>
 
     </div>
