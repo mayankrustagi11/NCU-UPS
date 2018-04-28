@@ -15,6 +15,12 @@
       <ul class="navbar-nav ml-auto">
         <?php if(isset($_SESSION['user_id'])) :?>
           <li class="nav-item">
+            <a class="nav-link" href="http://192.168.121.127:1880/ui/#/0" target="_blank">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://192.168.125.41/dashboard/project/containers/container/IoT" target="_blank">Cloud</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#"><?php echo 'Welcome, '.$_SESSION['user_name']; ?></a>
           </li>
           <li class="nav-item">

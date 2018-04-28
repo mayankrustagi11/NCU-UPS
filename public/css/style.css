@@ -5,7 +5,7 @@ html {
 
 body {
     margin-top: 0px;
-    margin-bottom: 90px; 
+    margin-bottom: 100px; 
     font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
     background: url('../img/tile.jpg') top left repeat;
@@ -69,6 +69,10 @@ button.btn:focus {
     outline: none !important;
 }
 
+.btn-light {
+    color: #000000 !important;
+}
+
 .btn-danger {
     background-color: #dd5638;
     border-collapse: #d95131;
@@ -116,7 +120,8 @@ blockquote:before {
 }
 
 #hero {
-    background: url("../img/server.jpeg") 50% no-repeat;
+    background: url("../img/server.jpeg") 50% no-repeat fixed;
+    background-size: cover;
     min-height: 425px;
     padding: 40px 0;
     color: white;
@@ -149,6 +154,45 @@ blockquote:before {
     background: #ffffff;
 }
 
+#developers blockquote {
+    text-align: justify !important;
+}
+
+#developers blockquote cite {
+    font-weight: bold;
+}
+
+#social-items {
+    text-align: left;
+}
+
+.badge.social {
+    background: #ccc;
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 42px;
+    margin: 0 5px 20px 0;
+    padding: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.badge.social.twitter:hover {
+    background: #55acee;
+}
+
+.badge.social.github:hover {
+    background:#6e5494;
+}
+
+.badge.social.linkedin:hover {
+    background: #0077B5;
+}
+
 .testimonial {
     margin-bottom: 60px;
 }
@@ -166,13 +210,12 @@ blockquote:before {
 footer {
     background: #3e4249;
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
     font-size: 16px;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 90px;
-    line-height: 60px;
+    height: 100px;
 }
 
 footer ul, footer p {
@@ -194,4 +237,74 @@ footer li.signup-link a {
 
 footer li.signup-link a:hover {
     font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+    #developers img {
+        width: 50%;
+    }
+
+    #social-items {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 50%;
+    }
+
+    #optin p {
+        margin: 0 0 10px;
+    }
+
+    body {   
+        margin-bottom: 140px; 
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 14px;
+        height: 140px;
+        line-height: 30px;
+    }
+
+    #developers img {
+        width: 50%;
+    }
+
+    #social-items {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logo {
+        width: 50%;
+    }
+
+    #optin p {
+        margin: 0 0 10px;
+    }
+
+    body {   
+        margin-bottom: 120px; 
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        height: 130px;
+        line-height: 30px;
+    }
+
+    #developers img {
+        width: 50%;
+    }
+
+    #social-items {
+        text-align: center;
+    }
 }

@@ -2,7 +2,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-6 mx-auto mb-4">
       <div class="card card-body bg-light mt-4">
           <h2>Create An Account</h2>
           <p>Please fill out the form to register with us</p>
