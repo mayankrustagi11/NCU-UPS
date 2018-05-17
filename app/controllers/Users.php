@@ -67,8 +67,8 @@
 
           // Register User
           if($this->userModel->register($data)) {
-            flash('register_success', 'You are now registered. Please login.');
-            redirect('users/login');
+            flash('register_success', 'User is now registered.');
+            redirect('users/register');
           } else {
             die('Something went wrong');
           }
@@ -79,20 +79,28 @@
         }
 
       } else {
-        // Init data
-        $data = [
-          'name' => '',
-          'email' => '',
-          'password' => '',
-          'confirm_password' => '',
-          'name_err' => '',
-          'email_err' => '',
-          'password_err' => '',
-          'confirm_password_err' => ''
-        ];
+        if(!isLoggedIn()) {
+          flash('register_error', 'You need to login.', 'alert alert-danger');
+          redirect('users/login');
+        }
+        elseif( isset($_SESSION['user_role']) && $_SESSION['user_role'] == 0) {
+          // Init data
+          $data = [
+            'name' => '',
+            'email' => '',
+            'password' => '',
+            'confirm_password' => '',
+            'name_err' => '',
+            'email_err' => '',
+            'password_err' => '',
+            'confirm_password_err' => ''
+          ];
 
-        // Load view
-        $this->view('users/register', $data);
+          // Load view
+          $this->view('users/register', $data);          
+        } else {
+          redirect('pages/index');
+        }
       }
     }
 
@@ -177,6 +185,23 @@
       session_destroy();
 
       redirect('users/login');
+    }
+
+    public function forgotpassword() {
+      if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+      } else {
+        // Init data
+        $data = [
+          'email' => '',
+          'password' => '',
+          'email_err' => '',
+          'password_err' => ''
+        ];
+
+        // Load view
+        $this->view('users/forgotpassword', $data);
+      }
     }
 
   }

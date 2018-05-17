@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-6 mx-auto">
       <div class="card card-body bg-light mt-4">
-        <?php flash('register_success'); ?>
+        <?php flash('register_error'); ?>
         <h2>Login</h2>
         <p>Please Enter Your Credentials</p>
         <form action="<?php echo URLROOT; ?>users/login" method="POST">
@@ -27,7 +27,7 @@
               <input type="Submit" value="Login" class="btn btn-success btn-black">
             </div>
             <div class="col">
-              <a href="<?php echo URLROOT; ?>users/register" class="btn btn-light btn-block">No Account? Register</a>
+              <a href="<?php echo URLROOT; ?>users/forgotpassword" class="btn btn-light btn-block">Forgot Password?</a>
             </div>
           </div>
 

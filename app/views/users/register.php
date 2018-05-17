@@ -4,6 +4,7 @@
   <div class="row">
     <div class="col-md-6 mx-auto mb-4">
       <div class="card card-body bg-light mt-4">
+        <?php flash('register_success'); ?>
           <h2>Create An Account</h2>
           <p>Please fill out the form to register with us</p>
           <form action="<?php echo URLROOT; ?>users/register" method="POST">
