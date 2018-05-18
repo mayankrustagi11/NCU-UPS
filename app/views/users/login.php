@@ -24,7 +24,7 @@
 
           <div class="row">
             <div class="col">
-              <input type="Submit" value="Login" class="btn btn-success btn-black">
+              <input type="Submit" value="Login" class="btn btn-success btn-block">
             </div>
             <div class="col">
               <a href="<?php echo URLROOT; ?>users/forgotpassword" class="btn btn-light btn-block">Forgot Password?</a>

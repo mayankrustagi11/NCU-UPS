@@ -51,7 +51,7 @@
         }
 
         if(empty($data['confirm_password'])) {
-          $data['confirm_password_err'] = 'Please enter the Confirm Password';
+          $data['confirm_password_err'] = 'Please enter a Confirm Password';
         } else {
           if($data['password'] != $data['confirm_password']) {
             $data['confirm_password_err'] = 'Passwords do not match';
@@ -121,12 +121,12 @@
 
         // Validate Data
         if(empty($data['email'])) {
-          $data['email_err'] = 'Please enter the Email';
+          $data['email_err'] = 'Please enter an Email';
         }
 
         // Validate Password
         if(empty($data['password'])) {
-          $data['password_err'] = 'Please enter the Password';
+          $data['password_err'] = 'Please enter a Password';
         }
 
         // Check for user/email
@@ -154,7 +154,7 @@
           // Load view with errors
           $this->view('users/login', $data);
         }
-      } else {
+      } elseif(!isLoggedIn()) {
         // Init data
         $data = [
           'email' => '',
@@ -165,6 +165,8 @@
 
         // Load view
         $this->view('users/login', $data);
+      } else {
+        redirect('pages/index');
       }
     }
 
@@ -189,14 +191,45 @@
 
     public function forgotpassword() {
       if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        
+        // Sanitize POST data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+        // Init data
+        $data = [
+          'email' => trim($_POST['email']),
+          'email_err' => ''
+        ];
+
+        // Validate Data
+        if(empty($data['email'])) {
+          $data['email_err'] = 'Please enter an Email';
+        }
+
+        // Check for user/email
+        $user = $this->userModel->findUserByEmail($data['email']);
+        if($user) {
+          // User found
+        } else {
+          $data['email_err'] = 'No user found';
+        }
+
+        // Make sure no errors
+        if(empty($data['email_err'])) {
+          
+          $token = md5(rand(0, 1000));
+          mailer($user->email,$user->name,$token);
+          redirect('users/login');
+
+        } else {
+          // Load view with errors
+          $this->view('users/forgotpassword', $data);
+        } 
       } else {
         // Init data
         $data = [
           'email' => '',
-          'password' => '',
           'email_err' => '',
-          'password_err' => ''
         ];
 
         // Load view

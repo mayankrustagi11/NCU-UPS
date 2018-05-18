@@ -47,13 +47,7 @@
       $this->db->bind(':email', $email);
 
       $row = $this->db->single();
-
-      // Check row
-      if($this->db->rowCount() > 0) {
-        return true;
-      } else {
-        return false;
-      }
+      return $row;
     }
 
     // Get user by id
