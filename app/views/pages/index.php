@@ -44,7 +44,7 @@
 
     <div class="row">
 
-      <div class="col-sm-4">
+      <div class="col-lg-4 col-md-12 col-sm-12">
         <img src="<?php echo URLROOT; ?>/img/icon-design.png" alt="Design">
         <h3>Internet of Things</h3>
         <p>The
@@ -52,7 +52,7 @@
           connected to the internet and being able to identify themselves to other devices</p>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-lg-4 col-md-12 col-sm-12">
         <img src="<?php echo URLROOT; ?>/img/icon-cms.png" alt="Cloud">
         <h3>Openstack</h3>
         <p>
@@ -60,7 +60,7 @@
           whereby virtual servers and other resources are made available to customers</p>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-lg-4 col-md-12 col-sm-12">
         <img src="<?php echo URLROOT; ?>/img/icon-code.png" alt="Application">
         <h3>Android &amp; Web</h3>
         <p>
@@ -81,28 +81,29 @@
       <div class="col-md-8 col-sm-12 offset-md-2">
 
         <h2 class="text-center">Developers</h2>
+        
+        <?php foreach($data['developers'] as $developer) : ?>
 
         <div class="row testimonial">
           <div class="col-lg-4 col-md-12">
-            <img src="<?php echo URLROOT; ?>/img/developers/manu.jpg" alt="Manu Gupta">
+            <img src="<?php echo URLROOT; ?>/img/developers/<?php echo $developer->profilepic; ?>" alt="<?php echo $developer->name; ?>">
           </div>
           <div class="col-lg-8 col-md-12">
 
             <blockquote>
-              Bringing automation in forefront of developing operations. Teaching Machines that work with 1s and 0s to come to their own
-              conclusion about the World.
+              <?php echo $developer->description; ?>
               <br>
-              <cite>&mdash; Manu Gupta</cite>
+              <cite>&mdash; <?php echo $developer->name; ?></cite>
             </blockquote>
 
             <div id="social-items">
-              <a href="https://github.com" target="_blank" class="badge social github">
+              <a href="https://github.com/<?php ?>" target="_blank" class="badge social github">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://www.linkedin.com" target="_blank" class="badge social linkedin">
+              <a href="https://www.linkedin.com<?php ?>" target="_blank" class="badge social linkedin">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://twitter.com" target="_blank" class="badge social twitter">
+              <a href="https://twitter.com<?php ?>" target="_blank" class="badge social twitter">
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
@@ -110,62 +111,8 @@
           </div>
         </div>
 
-        <div class="row testimonial">
-          <div class="col-lg-4 col-md-12">
-            <img src="<?php echo URLROOT; ?>/img/developers/mayank.jpg" alt="Mayank Rustagi">
-          </div>
+        <?php endforeach ?>
 
-          <div class="col-lg-8 col-md-12">
-
-            <blockquote>
-              I love developing the Web with PHP and NodeJS and designing beautiful and efficient web apps using HTML5, CSS3 and JavaScript.
-              <br>
-              <cite>&mdash; Mayank Rustagi</cite>
-            </blockquote>
-
-            <div id="social-items">
-              <a href="https://github.com" target="_blank" class="badge social github">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com" target="_blank" class="badge social linkedin">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" class="badge social twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="row testimonial">
-
-          <div class="col-lg-4 col-md-12">
-            <img src="<?php echo URLROOT; ?>/img/developers/milind.jpg" alt="Milind Wadhwa">
-          </div>
-
-          <div class="col-lg-8 col-md-12">
-            <blockquote>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam minus eum optio vero illum natus reprehenderit quasi iusto
-              aspernatur ab.
-              <br>
-              <cite>&mdash; Milind Wadhwa</cite>
-            </blockquote>
-
-            <div id="social-items">
-              <a href="https://github.com" target="_blank" class="badge social github">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com" target="_blank" class="badge social linkedin">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" class="badge social twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-
-        </div>
       </div>
 
     </div>

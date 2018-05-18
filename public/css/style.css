@@ -11,6 +11,19 @@ body {
     background: url('../img/tile.jpg') top left repeat;
 }
 
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 99;
+    font-size: 24px;
+    padding: 4px 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 .navbar {
     padding: 0;
     display: block;
@@ -31,7 +44,7 @@ h1 {
 }
 
 h1, h2 {
-    margin: 0 0 20px;
+    margin: 0 0 15px;
 }
 
 h3 {

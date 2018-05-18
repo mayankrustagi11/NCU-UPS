@@ -15,3 +15,4 @@
 <body>
 
   <?php require_once APPROOT. '/views/inc/navbar.php'; ?>
+  <button class="btn btn-dark" id="backToTopBtn" onclick="topFunction()"><i class="fas fa-angle-up"></i></button>
