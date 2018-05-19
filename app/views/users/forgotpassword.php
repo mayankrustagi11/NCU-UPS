@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card card-body bg-light mt-4">
-                
+            <?php flash('recover_error'); ?>
+               
                 <h2>Forgot Password</h2>
                 <p>Please Enter Your E-mail</p>
 

@@ -217,8 +217,10 @@
         // Make sure no errors
         if(empty($data['email_err'])) {
           
-          $token = md5(rand(0, 1000));
+          $token = md5(rand(0, 1000000));
+          $_SESSION['token'] = $token;
           mailer($user->email,$user->name,$token);
+          flash('recover_success', 'Please check your Email to continue.');
           redirect('users/login');
 
         } else {
@@ -226,14 +228,38 @@
           $this->view('users/forgotpassword', $data);
         } 
       } else {
-        // Init data
         $data = [
           'email' => '',
           'email_err' => '',
         ];
 
-        // Load view
+        // LOAD VIEW
         $this->view('users/forgotpassword', $data);
+      }
+    }
+
+    public function recover() {
+      if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        
+      } else if(isset($_GET['email']) && isset($_GET['token'])) {
+        
+        if(isset($_SESSION['token']) && $_SESSION['token'] == $_GET['token']) {    
+          // DELETE TOKEN
+          unset($_SESSION['token']);
+          $data = [
+            'password' => '',
+            'confirm_password' => '',
+            'password_err' => '',
+            'confirm_password_err' => ''
+          ];
+          // LOAD VIEW
+          $this->view('users/recover', $data);
+        } else {
+          flash('recover_error', 'The Token has expired. Try again.', 'alert alert-danger');
+          redirect('users/forgotpassword');
+        }
+      } else {
+        redirect('pages/index');
       }
     }
 

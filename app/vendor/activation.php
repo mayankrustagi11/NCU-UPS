@@ -27,8 +27,8 @@ function mailer($email,$name,$token)
       $mail->addAddress($email,$name);
       $mail->isHTML(true);
       $mail->Subject = 'Password Verification';
-      $mail->Body    = 'Hello '.$name.', <br>Thank you for signing up at NCU-UPS.<br>Please click this link to recover your account:<br>
-                        http://localhost/ups/user/recover.php?email='.$email.'&token='.$token;
+      $mail->Body    = 'Hello '.$name.', <br><br>Thank you for signing up at NCU-UPS.<br>Please click this link to recover your account:<br><br>
+                        http://localhost/ups/users/recover/?email='.$email.'&token='.$token;
       $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
       $mail->send();
