@@ -5,7 +5,7 @@ html {
 
 body {
     margin-top: 0px;
-    margin-bottom: 100px; 
+    margin-bottom: 100px;
     font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
     background: url('../img/tile.jpg') top left repeat;
@@ -31,9 +31,16 @@ body {
 
 sup {
     color: #ff0000;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     -webkit-font-smooting: antialiased;
     text-rendering: optimizeLegibility;
     font-weight: bold;
@@ -43,7 +50,8 @@ h1 {
     font-size: 3em;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0 0 15px;
 }
 
@@ -68,7 +76,10 @@ a:hover {
     color: #c9302c;
 }
 
-button, input, .btn, a.btn {
+button,
+input,
+.btn,
+a.btn {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     color: #fff;
@@ -159,7 +170,8 @@ blockquote:before {
     margin: 7px 0 0 0;
 }
 
-#project-features .row p, #project-features p.lead {
+#project-features .row p,
+#project-features p.lead {
     text-align: justify !important;
 }
 
@@ -199,7 +211,7 @@ blockquote:before {
 }
 
 .badge.social.github:hover {
-    background:#6e5494;
+    background: #6e5494;
 }
 
 .badge.social.linkedin:hover {
@@ -231,12 +243,13 @@ footer {
     height: 100px;
 }
 
-footer ul, footer p {
+footer ul,
+footer p {
     margin: 0 !important;
 }
 
-
-footer a:link, footer a:visited {
+footer a:link,
+footer a:visited {
     color: #fff;
 }
 
@@ -256,9 +269,15 @@ footer li.signup-link a:hover {
     #developers img {
         width: 50%;
     }
-
     #social-items {
         text-align: center;
+    }
+    footer {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 14px;
+        height: 120px;
+        line-height: 30px;
     }
 }
 
@@ -266,27 +285,22 @@ footer li.signup-link a:hover {
     .logo {
         width: 50%;
     }
-
     #optin p {
         margin: 0 0 10px;
     }
-
-    body {   
-        margin-bottom: 140px; 
+    body {
+        margin-bottom: 140px;
     }
-
     footer {
         text-align: center;
         padding: 20px 0;
         font-size: 14px;
-        height: 140px;
+        height: 160px;
         line-height: 30px;
     }
-
     #developers img {
         width: 50%;
     }
-
     #social-items {
         text-align: center;
     }
@@ -296,27 +310,22 @@ footer li.signup-link a:hover {
     .logo {
         width: 50%;
     }
-
     #optin p {
         margin: 0 0 10px;
     }
-
-    body {   
-        margin-bottom: 120px; 
+    body {
+        margin-bottom: 120px;
     }
-
     footer {
         text-align: center;
         padding: 10px 0;
         font-size: 14px;
-        height: 130px;
+        height: 150px;
         line-height: 30px;
     }
-
     #developers img {
         width: 50%;
     }
-
     #social-items {
         text-align: center;
     }

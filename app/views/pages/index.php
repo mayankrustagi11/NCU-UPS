@@ -81,7 +81,7 @@
       <div class="col-md-8 col-sm-12 offset-md-2">
 
         <h2 class="text-center">Developers</h2>
-        
+
         <?php foreach($data['developers'] as $developer) : ?>
 
         <div class="row testimonial">
@@ -93,7 +93,9 @@
             <blockquote>
               <?php echo $developer->description; ?>
               <br>
-              <cite>&mdash; <?php echo $developer->name; ?></cite>
+              <cite>&mdash;
+                <?php echo $developer->name; ?>
+              </cite>
             </blockquote>
 
             <div id="social-items">

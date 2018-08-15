@@ -22,7 +22,8 @@
             <div class="dropdown-menu" aria-labelledby="MenuButton">
             <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 0) :?>
               <a class="dropdown-item" href="<?php echo URLROOT; ?>users/register">Add User</a>
-              <a class="dropdown-item" href="<?php echo URLROOT; ?>router/add">Add Router</a>
+              <a class="dropdown-item" href="<?php echo URLROOT; ?>routers/">View Router</a>
+              <a class="dropdown-item" href="<?php echo URLROOT; ?>routers/add">Add Router</a>
             <?php endif ?>  
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="<?php echo URLROOT; ?>users/logout">Logout</a>
