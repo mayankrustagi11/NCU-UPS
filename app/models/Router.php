@@ -9,11 +9,11 @@
 
     // Get Routers
     public function getRouters() {
-        $this->db->query('SELECT * FROM routers');
+      $this->db->query('SELECT * FROM routers');
 
-        $results = $this->db->resultSet();
-        return $results;
-      }
+      $results = $this->db->resultSet();
+      return $results;
+    }
 
     // Add Router
     public function add($data) {

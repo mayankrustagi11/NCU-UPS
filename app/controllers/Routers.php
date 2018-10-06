@@ -3,6 +3,7 @@
   class Routers extends Controller {
     public function __construct() {
       $this->routerModel = $this->model('Router');
+      $this->roomDataModel = $this->model('RoomData');
     }
 
     public function index() {
@@ -181,4 +182,44 @@
         redirect('routers/index');
       }
     }
+
+    public function fetch($room) {
+      if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        // Check if router exists
+        $router = $this->routerModel->findRouterByRoomNo($room);
+        if(!$router) {
+          die('Room does not exist.');
+        }
+
+        $data = [
+          'room' => $room,
+          'timestamp' => date('Y-m-d H:i:s'),
+          'temp' => $_POST['temp'],
+          'room_err' => '',
+          'temp_err' => ''
+        ];
+
+        if(empty($data['room'])) {
+          $data['room_err'] = 'Enter valid room no';
+        }
+        if(empty($data['temp'])) {
+          $data['temp_err'] = 'Enter valid temp value';
+        }
+
+        // Make sure no errors
+        if(empty($data['room_err']) && empty($data['temp_err'])) {
+          // Validated
+
+          // Add Data Entry
+          if($this->roomDataModel->add($data)) {
+            die('Successfull.');
+          } else {
+            die('Failed.');
+          }
+
+        }
+      } 
+    }
+
   }
