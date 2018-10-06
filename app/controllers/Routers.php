@@ -146,7 +146,13 @@
           redirect('users/login');
         } else {
           // Get Router Details
-          $router = $this->routerModel->getRouterById($id);  
+          $router = $this->routerModel->getRouterById($id);
+          
+          if(!$router) {
+            flash('fetch_router_fail', 'Router Does Not Exist', 'alert alert-danger');
+            redirect('routers/index');
+          } 
+
           $data = [
             'id' => $router->id,
             'room' => $router->room,

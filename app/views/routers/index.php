@@ -6,6 +6,7 @@
             <?php flash('add_router_success'); ?>
             <?php flash('delete_router_success'); ?>
             <?php flash('update_router_success'); ?>
+            <?php flash('fetch_router_fail'); ?>
 
             <h2 class="text-center mt-4">All Routers</h2>
         </div>
