@@ -9,6 +9,8 @@
 
   // Load Mailer
   require_once 'vendor/activation.php';
+  //Load Firebase
+  require_once 'vendor/firebase.php';
 
   // Autoload Core libraries
   spl_autoload_register(function($className){

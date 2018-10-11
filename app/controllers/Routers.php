@@ -3,7 +3,7 @@
   class Routers extends Controller {
     public function __construct() {
       $this->routerModel = $this->model('Router');
-      $this->roomDataModel = $this->model('RoomData');
+      $this->firebaseObject = new FirebaseDatabase();
     }
 
     public function index() {
@@ -169,7 +169,7 @@
       }
     }
 
-    public function delete($id) {
+    public function delete($id = null) {
       if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if($this->routerModel->deleteRouter($id)) {
@@ -183,43 +183,26 @@
       }
     }
 
-    public function fetch($room) {
+    public function fetch($id = null) {
       if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Check if router exists
-        $router = $this->routerModel->findRouterByRoomNo($room);
+      } else {
+        // No Room Entered
+        if($id == null) {
+          flash('fetch_router_fail', 'No Router Entered', 'alert alert-danger');
+          redirect('routers/index');
+        } 
+        // Get Router Details
+        $router = $this->routerModel->getRouterById($id);
+        
         if(!$router) {
-          die('Room does not exist.');
+          flash('fetch_router_fail', 'Router Does Not Exist', 'alert alert-danger');
+          redirect('routers/index');
         }
 
-        $data = [
-          'room' => $room,
-          'timestamp' => date('Y-m-d H:i:s'),
-          'temp' => $_POST['temp'],
-          'room_err' => '',
-          'temp_err' => ''
-        ];
-
-        if(empty($data['room'])) {
-          $data['room_err'] = 'Enter valid room no';
-        }
-        if(empty($data['temp'])) {
-          $data['temp_err'] = 'Enter valid temp value';
-        }
-
-        // Make sure no errors
-        if(empty($data['room_err']) && empty($data['temp_err'])) {
-          // Validated
-
-          // Add Data Entry
-          if($this->roomDataModel->add($data)) {
-            die('Successfull.');
-          } else {
-            die('Failed.');
-          }
-
-        }
-      } 
+        $data = $this->firebaseObject->get();
+        $this->view('routers/fetch', $data);
+      }
     }
 
   }

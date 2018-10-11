@@ -1,5 +1,7 @@
 <?php
 
+require_once 'autoload.php';
+
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\OAuth;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -8,8 +10,6 @@ use PHPMailer\PHPMailer\SMTP;
 
 function mailer($email,$name,$token)
 {
-  require_once 'autoload.php';
-
   $mail = new PHPMailer(true);                          
 
       //Server settings
