@@ -27,12 +27,12 @@
         </tr>
         </thead>
         <tbody>
-            <?php foreach($data['routers'] as $router): ?>
+            <?php foreach ($data['routers'] as $router): ?>
                 <tr>
                     <td><?php echo $router->room; ?></td>
                     <td><?php echo $router->incharge; ?></td>
                     <td>
-                        <a href="<?php echo URLROOT; ?>routers/fetch/<?php echo $router->id; ?>" role="button" class="btn btn-light" title="View History">
+                        <a href="<?php echo URLROOT; ?>routers/fetch/<?php echo $router->room; ?>" role="button" class="btn btn-light" title="View History">
                             <i class="fas fa-chart-bar"></i>
                         </a>
                         <a href="<?php echo 'http://'.$router->ip.':1880/ui/#/0'; ?>" target="_blank" class="btn btn-light" role="button" title="View Dashboard">

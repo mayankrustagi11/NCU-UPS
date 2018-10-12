@@ -12,9 +12,9 @@
                 <nav>
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item"><a href="<?php echo URLROOT; ?>">Home</a></li>
-                        <?php if(isset($_SESSION['user_id'])) :?>
-                        <li class="list-inline-item"><a class="nav-link" href="http://192.168.121.127:1880/ui/#/0" target="_blank">Dashboard</a></li>
-                        <li class="list-inline-item"><a class="nav-link" href="http://192.168.125.41/dashboard/project/containers/container/IoT" target="_blank">Cloud</a></li>
+                        <?php if (isset($_SESSION['user_id'])) :?>
+                        <li class="list-inline-item"><a class="nav-link" href="#" target="_blank">Dashboard</a></li>
+                        <li class="list-inline-item"><a class="nav-link" href="#" target="_blank">Cloud</a></li>
                         <?php else : ?>
                         <li class="list-inline-item"><a href="<?php echo URLROOT; ?>users/login">Login</a></li>          
                         <?php endif; ?>
